@@ -104,9 +104,6 @@ class _TransformDemoState extends State<TransformDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
