@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class TransformDemo extends StatefulWidget {
-  TransformDemo({Key? key}) : super();
+  const TransformDemo({Key? key}) : super();
 
   final String title = 'Transform Demo';
 

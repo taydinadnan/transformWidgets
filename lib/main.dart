@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:ui_with_flutter/UI/stack.dart';
-import 'package:ui_with_flutter/transform/transforms.dart';
+import 'package:ui_with_flutter/navigationb.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   final String title = 'Transform Example';
+
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => MaterialApp(
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
 class MainPage extends StatefulWidget {
   final String title;
 
+  // ignore: use_key_in_widget_constructors
   const MainPage({
     required this.title,
   });
@@ -28,7 +30,8 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   @override
-  Widget build(BuildContext context) => Scaffold(body: TransformDemo()
+  Widget build(BuildContext context) => const Scaffold(body: BottomNavigation()
+      //TransformDemo()
       //StackWidge()
       //   FrontToBack(
       //   urlFront: 'assets/1.png',
