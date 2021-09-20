@@ -64,7 +64,7 @@ class _TransformDemoState extends State<TransformDemo> {
     return Container(
       child: Transform.scale(
         scale: sliderVal == 0 ? 1 : sliderVal / 50,
-        origin: Offset(0.0, 0.0),
+        origin: const Offset(0.0, 0.0),
         child: Container(
           height: 100,
           width: 100,
@@ -78,7 +78,7 @@ class _TransformDemoState extends State<TransformDemo> {
     return Container(
       child: Transform.rotate(
         angle: sliderVal,
-        origin: Offset(0.0, 0.0),
+        origin: const Offset(0.0, 0.0),
         child: Container(
           height: 50,
           width: 50,
@@ -90,6 +90,9 @@ class _TransformDemoState extends State<TransformDemo> {
 
   Slider slider() {
     return Slider(
+      thumbColor: Colors.orangeAccent,
+      activeColor: Colors.red,
+      inactiveColor: Colors.red[200],
       value: sliderVal,
       min: 0,
       max: 100,
@@ -104,16 +107,23 @@ class _TransformDemoState extends State<TransformDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          slider(),
-          rotate(),
-          scale(),
-          translate(),
-          skew(),
-          threeD(),
-        ],
+      body: Container(
+        decoration: const BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+                colors: [Colors.white, Colors.orange])),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            slider(),
+            rotate(),
+            scale(),
+            translate(),
+            skew(),
+            threeD(),
+          ],
+        ),
       ),
     );
   }

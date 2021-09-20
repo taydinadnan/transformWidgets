@@ -39,7 +39,14 @@ class _BottomNavigationState extends State<BottomNavigation> {
           'Bottom Navigation Bar',
         ),
       ),
-      body: tabs[_currentIndex],
+      body: Container(
+        child: tabs[_currentIndex],
+        decoration: const BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+                colors: [Colors.white, Colors.orange])),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         items: const [
